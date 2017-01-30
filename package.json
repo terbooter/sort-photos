@@ -1,0 +1,19 @@
+{
+  "name": "sort-photos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./app/app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "exif": "^0.6.0",
+    "filehound": "^1.13.0",
+    "mkdirp": "^0.5.1",
+    "moment": "^2.17.1",
+    "sharp": "^0.17.0"
+  }
+}
