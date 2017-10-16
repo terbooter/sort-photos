@@ -1,24 +1,32 @@
 let PhotoSorter = require("./lib").PhotoSorter;
+let VideoSorter = require("./lib").VideoSorter;
 
 const unsortedDir = "c:\\unsorted-photos";
 const sortedDir = "c:\\photos";
 
-let sorter = new PhotoSorter(unsortedDir, sortedDir);
-sorter.sort();
+let photoSorter = new PhotoSorter(unsortedDir, sortedDir);
+addListeners(photoSorter);
+photoSorter.sort();
 
-sorter.on("complete", () => {
-    console.log("Sort complete");
-});
+let videoSorter = new VideoSorter(unsortedDir, sortedDir);
+addListeners(videoSorter);
+videoSorter.sort();
 
-sorter.on("error", (error) => {
-    console.log("Sort ERROR");
-    console.log(error);
-});
+function addListeners(sorter) {
+    sorter.on("complete", () => {
+        console.log("Sort complete");
+    });
 
-sorter.on("start-file", (file) => {
-    console.log(`Start file ${file}`);
-});
+    sorter.on("error", (error) => {
+        console.log("Sort ERROR");
+        console.log(error);
+    });
 
-sorter.on("ready-file", (file) => {
-    console.log(`Ready file ${file}`);
-});
+    sorter.on("start-file", (file) => {
+        console.log(`Start file ${file}`);
+    });
+
+    sorter.on("ready-file", (file) => {
+        console.log(`Ready file ${file}`);
+    });
+}

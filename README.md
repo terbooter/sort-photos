@@ -29,5 +29,7 @@ sorter.on("start-file", (file) => {
 sorter.on("ready-file", (file) => {
     console.log(`Ready file ${file}`);
 });
-
 ```
+
+Download exiftool
+http://owl.phy.queensu.ca/~phil/exiftool/
